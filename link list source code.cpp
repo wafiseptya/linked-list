@@ -41,8 +41,7 @@ void add_front(int value){
     }
 }
 
-void add_middle(int value, int pos)
-  {
+void add_middle(int value, int pos){
     node *pre = new node;
     //node *nex = new node; //double linked list
     node *cur = new node;
@@ -55,8 +54,7 @@ void add_middle(int value, int pos)
         //temp->prev = NULL; //double linked list
     }else {
         cur = head;
-        for(int i=1;i<pos;i++)
-        {
+        for(int i=1;i<pos;i++){
           pre = cur;
           cur = cur->next;
           //nex = cur->next //double linked list
@@ -67,7 +65,7 @@ void add_middle(int value, int pos)
         //temp->prev = pre; //double linked list
         temp->next = cur;
     }
-  }
+}
 
 void show_data(){
     if(head == NULL){
@@ -166,8 +164,21 @@ void delete_pos(int pos){
     //nex->prev = cur->prev; //double linked list
 }
 
-int main(){
+void revers(){ //ini untuk membalik urutan linked listnya
+    node *cur, *pre, *nex = new node;
+    pre = NULL;
+    cur = head;
+    nex = NULL;
+    while (cur != NULL){
+        nex = cur->next;
+        cur->next = pre;
+        pre = cur;
+        cur =  nex;
+    }
+    head = pre;
+}
 
+int main(){
     //INSERT CODE HERE
 
     return 0;
