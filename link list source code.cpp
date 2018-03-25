@@ -164,11 +164,10 @@ void delete_pos(int pos){
     //nex->prev = cur->prev; //double linked list
 }
 
-void revers(){ //ini untuk membalik urutan linked listnya
+void revers(){//ini untuk membalik urutan linked listnya
     node *cur, *pre, *nex = new node;
     pre = NULL;
     cur = head;
-    nex = NULL;
     while (cur != NULL){
         nex = cur->next;
         cur->next = pre;
@@ -179,6 +178,18 @@ void revers(){ //ini untuk membalik urutan linked listnya
 }
 
 int main(){
+    add_data(1);
+    add_data(2);
+    add_data(3);
+    add_data(4);
+    add_data(5);
+    add_data(6);
+    add_data(7);
+    add_data(8);
+    add_middle(99, 5);
+    show_data();
+    revers();
+    show_data();
     //INSERT CODE HERE
 
     return 0;
